@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 8.0
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 8.0
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+install:
+  - composer update --prefer-dist --no-interaction
+
+script:
+  - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover
