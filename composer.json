@@ -6,7 +6,7 @@
     "keywords": [
         "symfony"
     ],
-    "homepage": "https://lsb.pl",
+    "homepage": "https://lsbdata.com",
     "authors": [
         {
             "name": "LSB DATA",
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LSB\\TemplateVendorSF5Bundle\\": ""
+            "LSB\\ShippingBundle\\": ""
         },
         "exclude-from-classmap": [
             "Tests/"
