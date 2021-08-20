@@ -15,10 +15,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class Method
  * @package LSB\ShippingBundle\Entity
- * @UniqueEntity("number")
  * @MappedSuperclass
  */
-class Method implements MethodInterface
+abstract class Method implements MethodInterface
 {
     use UuidTrait;
     use TranslatableTrait;
@@ -56,5 +55,23 @@ class Method implements MethodInterface
     public function __call($method, $arguments)
     {
         return $this->proxyCurrentLocaleTranslation($method, $arguments);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode(): string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     * @return $this
+     */
+    public function setCode(string $code): static
+    {
+        $this->code = $code;
+        return $this;
     }
 }

@@ -1,1 +1,5 @@
 services:
+    LSB\ShippingBundle\Repository\MethodRepository:
+        arguments:
+            - '@doctrine'
+    LSB\ShippingBundle\Repository\MethodRepositoryInterface: '@LSB\ShippingBundle\Repository\MethodRepository'

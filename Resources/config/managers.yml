@@ -1,1 +1,4 @@
 services:
+    LSB\ShippingBundle\Manager\MethodManager:
+        arguments:
+            - '@lsb_utility_object_manager'

@@ -1,1 +1,7 @@
 services:
+
+    LSB\ShippingBundle\Factory\MethodFactory: null
+
+    lsb_shipping_factory_method:
+        alias: LSB\ShippingBundle\Factory\MethodFactory
+    LSB\ShippingBundle\Factory\MethodFactoryInterface: '@LSB\ShippingBundle\Factory\MethodFactory'
