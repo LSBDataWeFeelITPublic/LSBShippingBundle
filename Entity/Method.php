@@ -31,6 +31,12 @@ abstract class Method implements MethodInterface
     protected string $code;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    protected bool $isEnabled = true;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -72,6 +78,24 @@ abstract class Method implements MethodInterface
     public function setCode(string $code): static
     {
         $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled(): bool
+    {
+        return $this->isEnabled;
+    }
+
+    /**
+     * @param bool $isEnabled
+     * @return $this
+     */
+    public function setIsEnabled(bool $isEnabled): static
+    {
+        $this->isEnabled = $isEnabled;
         return $this;
     }
 }

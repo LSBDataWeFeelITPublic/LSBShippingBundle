@@ -9,5 +9,6 @@ namespace LSB\ShippingBundle\Entity;
  */
 interface MethodInterface
 {
-
+    const TYPE_COURIER = 'courier';
+    const TYPE_PERSONAL_PICKUP = 'personalPickup';
 }

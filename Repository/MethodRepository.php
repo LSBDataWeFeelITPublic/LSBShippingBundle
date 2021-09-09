@@ -26,4 +26,19 @@ class MethodRepository extends BaseRepository implements MethodRepositoryInterfa
         parent::__construct($registry, $stringClass ?? Method::class);
     }
 
+    /**
+     * @param array $codes
+     * @return array
+     */
+    public function getByCodes(array $codes): array
+    {
+        $qb = $this->createQueryBuilder('m');
+        $qb->where('m.isEnabled = TRUE')
+            ->andWhere('m.code IN (:codes)')
+            ->setParameter('codes', $codes)
+            ->orderBy('m.code', 'ASC')
+        ;
+
+        return $qb->getQuery()->execute();
+    }
 }
