@@ -32,6 +32,7 @@ class MethodRepository extends BaseRepository implements MethodRepositoryInterfa
      */
     public function getByCodes(array $codes): array
     {
+
         $qb = $this->createQueryBuilder('m');
         $qb->where('m.isEnabled = TRUE')
             ->andWhere('m.code IN (:codes)')
